@@ -14,7 +14,7 @@ export default function BookingInformation(props) {
                             <div className="card">
                                 <figure className="img-wrapper" style={{height: 270}}>
                                     <img 
-                                        src={ItemDetails.imgUrls[0].url} 
+                                        src={ItemDetails.imageUrls[0].url} 
                                         alt={ItemDetails.name} 
                                         className="img-cover"/>
                                 </figure>
@@ -57,12 +57,14 @@ export default function BookingInformation(props) {
                             <InputText
                                 id="email"
                                 name="email"
+                                type="email"
                                 value={data.email}
                                 onChange={props.onChange}/>
                             <label htmlFor="phone">Phone Number</label>
                             <InputText
                                 id="phone"
                                 name="phone"
+                                type="tel"
                                 value={data.phone}
                                 onChange={props.onChange}/>
                         </Fade>

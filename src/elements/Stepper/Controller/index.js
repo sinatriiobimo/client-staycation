@@ -1,7 +1,7 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
+import React from 'react'
+import Fade from 'react-reveal/Fade'
 
-const Controller = (props) => {
+export default function Controller(props) {
     return (
         <Fade>
             <section className="container">
@@ -10,7 +10,5 @@ const Controller = (props) => {
                 </div>
             </section>
         </Fade>
-    );
+    )
 }
-
-export default Controller;

@@ -1,7 +1,7 @@
 @import '../../../assets/scss/colorVariables';
 
 $stepperMainColor: $gray-200;
-$size: 60px;
+$size: 50px;
 
 ol.stepper {
     display: flex;
@@ -9,7 +9,7 @@ ol.stepper {
     justify-content: center;
     margin: 0;
     padding: 0;
-    
+
     li {
         position: relative;
         display: flex;
@@ -22,29 +22,29 @@ ol.stepper {
         color: $white;
 
         &:after {
-            position: relative;
+            position: absolute;
             content: "";
             z-index: 2;
             width: $size;
             height: $size;
             border-radius: $size;
-            background-image: url('data:image/svg+xml;utf8,<svg width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 13.4082L11.9143 20L27 3" stroke="white" stroke-width="5" stroke-linecap="round"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg width="43" height="33" viewBox="0 0 43 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18.5L17 28L39 3.5" stroke="white" stroke-width="7" stroke-linecap="round"/></svg>') ;
             background-position: center;
             background-repeat: no-repeat;
             background-color: $teal;
             transform: scale(1);
-            transition: .35s transform ease-in-out;
+            transition: .35s transform ease-in-out ;
         }
 
         &:not(:last-child) {
             margin-right: 60px;
-            &:before {
+            &::before {
                 content: "";
                 z-index: -2;
                 top: 50%;
                 left: 100%;
                 position: absolute;
-                width: $size * 10;
+                width: 60px;
                 height: 1px;
                 background-color: $stepperMainColor;
             }
@@ -52,7 +52,7 @@ ol.stepper {
 
         &.active {
             &:after {
-                z-index: 1;
+                z-index: -1;
                 background: $white;
                 border: 1px solid $stepperMainColor;
                 transform: scale(1.2);
@@ -70,3 +70,4 @@ ol.stepper {
         }
     }
 }
+
