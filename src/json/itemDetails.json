@@ -5,15 +5,15 @@
   "imageUrls": [
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/featured-1.jpg"
+      "url": "/images/detail-1.jpg"
     },
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/featured-2.jpg"
+      "url": "/images/detail-2.jpg"
     },
     {
       "_id": "asd1293uasdads1",
-      "url": "/images/featured-3.jpg"
+      "url": "/images/detail-3.jpg"
     }
   ],
   "country": "Indonesia",
@@ -103,20 +103,20 @@
   "categories": [
     {
       "_id": "asd1293uasdads1",
-      "name": "Things to do",
+      "name": "Treasure to choose",
       "items": [
         {
           "_id": "asd1293uasdads1",
           "name": "Safari Park",
-          "imageUrl": "/images/things-1.jpg",
+          "imageUrl": "/images/treasure-1.jpg",
           "country": "Indonesia",
           "city": "Bogor",
-          "isPopular": false
+          "isPopular": true
         },
         {
           "_id": "asd1293uasdads1",
           "name": "Green Lake",
-          "imageUrl": "/images/things-2.jpg",
+          "imageUrl": "/images/treasure-2.jpg",
           "country": "Indonesia",
           "city": "Bogor",
           "isPopular": false
@@ -124,15 +124,15 @@
         {
           "_id": "asd1293uasdads1",
           "name": "Bogor State Park",
-          "imageUrl": "/images/things-3.jpg",
+          "imageUrl": "/images/treasure-3.jpg",
           "country": "Indonesia",
           "city": "Bogor",
-          "isPopular": true
+          "isPopular": false
         },
         {
           "_id": "asd1293uasdads1",
           "name": "The Jungle",
-          "imageUrl": "/images/things-4.jpg",
+          "imageUrl": "/images/treasure-4.jpg",
           "country": "Indonesia",
           "city": "Bogor",
           "isPopular": false
@@ -142,7 +142,7 @@
   ],
   "testimonial": {
     "_id": "asd1293uasdads1",
-    "imageUrl": "/images/testimonial-detailspage.png",
+    "imageUrl": "/images/testimonial-img2.png",
     "name": "Happy Family",
     "rate": 4.25,
     "content": "What a great trip with my family and I should try again and again next time soon...",
