@@ -100,7 +100,9 @@ class BookingForm extends Component {
                         hasShadow
                         isPrimary
                         isBlock
-                        onClick={startBooking}>
+                        onClick={startBooking}
+                        href="/checkout"
+                        type="link">
                             Continue to Book
                         </Button>
             </div>
