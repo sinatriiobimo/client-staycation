@@ -7,8 +7,7 @@ import Stepper, {Numbering, Meta, MainContent, Controller} from 'elements/Steppe
 import BookingInformation from 'parts/Checkout/BookingInformation';
 import Payment from 'parts/Checkout/Payments';
 import Completed from 'parts/Checkout/Completed';
-import ItemDetails from 'json/itemDetails.json';
-import BookingForm from 'parts/BookingForm';
+import {submitBooking} from 'store/actions/checkout';
 
 class Checkout extends Component {
     state = {
@@ -36,10 +35,34 @@ class Checkout extends Component {
         window.scrollTo(0, 0);
     }
 
+    _Submit = (nextStep) => {
+        const { data } = this.state;
+        const { checkout } = this.props;
+        const payload = new FormData();
+
+        payload.append("firstName", data.firstName);
+        payload.append("lastName", data.lastName);
+        payload.append("email", data.email);
+        payload.append("phoneNumber", data.phone);
+        payload.append("idItem", checkout._id);
+        payload.append("duration", checkout.duration);
+        payload.append("bookingStartDate", checkout.date.startDate);
+        payload.append("bookingEndDate", checkout.date.endDate);
+        payload.append("accountHolder", data.bankHolder);
+        payload.append("bankFrom", data.bankName);
+        payload.append("image", data.proofPayment[0]);
+
+        this.props.submitBooking(payload).then(() => {
+            nextStep()
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     render() {
         const {data} = this.state;
         const {checkout, page} = this.props;
-
+        console.log(page, data);
         if(!checkout)
         return <div className="container">
             <div className="row align-items-center justify-content-center text-center" style={{ height: "100vh" }}>
@@ -123,7 +146,8 @@ class Checkout extends Component {
                                             type="link"
                                             isBlock
                                             isLight
-                                            href={`/properties/${ItemDetails._id}`}>
+                                            onClick={() => this.props.history.goBack()}
+                                            >
                                                 Cancel
                                             </Button>
                                     </Controller>
@@ -141,7 +165,7 @@ class Checkout extends Component {
                                                     isBlock
                                                     isPrimary
                                                     hasShadow
-                                                    onClick={nextStep}>
+                                                    onClick={() => this._Submit(nextStep)}>
                                                         Continue to Book
                                                  </Button>
                                              </Fade>
@@ -185,4 +209,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, {submitBooking})(Checkout);
